@@ -20,7 +20,7 @@
   - name: connect to database
     community.mysql.mysql_info:
       login_user: "{{ login_user }}"
-      login_password: "{{ mysql_root_pass }}" #"{{ lookup('amazon.aws.aws_ssm', '/expense/mysql/mysql_password', decrypt=true ) }}"
+      login_password: "{{ lookup('amazon.aws.aws_ssm', '/expense/role/mysql/mysql_root_pass', decrypt=true ) }}"
       login_host: "{{ login_host }}"
     register: mysql_info 
     ignore_errors: true
