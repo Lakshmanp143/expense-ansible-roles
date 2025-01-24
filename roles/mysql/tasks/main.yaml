@@ -19,9 +19,9 @@
 
   - name: connect to database
     community.mysql.mysql_info:
-      login_user: root
+      login_user: "{{ login_user }}"
       login_password: "{{ mysql_root_password }}"
-      login_host: mysql.lakshman.site
+      login_host: "{{ login_host }}"
     register: mysql_info 
     ignore_errors: true
 
